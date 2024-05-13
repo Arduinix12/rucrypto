@@ -1,0 +1,211 @@
+// Arduinix 11.05.2024 версия 1.0.0
+
+описание библеотека rucrypto поддерживает несколько алгоритмов шифрования
+в числе которых:
+шифр цезаря (Caesar.h)
+шифр виженера(Vigenere.h)
+RSA(RSA.h)
+DES(DES.h)
+
+Класс для шифрования и дешифрования текста методом Цезаря */ class Caeser { private: std::string str; ///< Хранит введенную пользователем строку int key; ///< Хранит ключ для шифрования и дешифрования
+public:
+/**
+*  Устанавливает значение строки для шифрования и дешифрования
+* \param str - строка для шифрования и дешифрования
+* \return строка для работы с методами шифрования и дешифрования
+*/
+std::string getword(std::string str);
+
+
+/**
+*  Проверяет ключ на допустимость
+* \param key - ключ для шифрования и дешифрования
+* \return 0 - если ключ верный, 1 - если ключ равен 0, -1 - если ключ не является целым числом
+*/
+int chekkey(int key);
+
+/**
+* \brief Устанавливает значение ключа для шифрования и дешифрования
+* \param key - ключ для шифрования и дешифрования
+* \return ключ для работы с методами шифрования и дешифрования
+*/
+int getkey(int key);
+
+/**
+*  Шифрует строку по методу Цезаря
+* string str - строка для шифрования
+* int  key - ключ для шифрования
+* \return зашифрованную строку
+*/
+std::string encript(std::string str, int key);
+
+/**
+*  Дешифрует строку, зашифрованную методом Цезаря
+* string str - строка для дешифрования
+* int key - ключ для дешифрования
+* \return расшифрованную строку
+*/
+std::string decript(std::string str, int key);
+};
+
+**/
+// документация на DES(DES.h)
+// Определение константных массивов для алгоритма DES
+const int IP[64] = { /* ... */ };
+const int IP_1[64] = { /* ... */ };
+const int E_exp[48] = { /* ... */ };
+const int P_transform[32] = { /* ... */ };
+const int PC_1[56] = { /* ... */ };
+const int PC_2[48] = { /* ... */ };
+const int SBOX_1[4][16] = { /* ... */ };
+// ...
+const int SBOX_8[4][16] = { /* ... */ };
+SBOX SBox[8] = { SBOX_1, SBOX_2, SBOX_3, SBOX_4, SBOX_5, SBOX_6, SBOX_7, SBOX_8 };
+
+// Основной класс DES с методами для шифрования и дешифрования
+class DES {
+    // Члены класса для хранения ключей, кодов и промежуточных данных
+    // ...
+
+    // Метод для кодирования строки с использованием ключа
+    void encode(string str, string key) {
+        // ...
+    }
+
+    // Метод для декодирования строки с использованием ключа
+    void decode(string str, string key) {
+        // ...
+    }
+
+    // Вспомогательные методы для реализации алгоритма DES
+    void fill(string str) { /* ... */ }
+    void formatSourceCode() { /* ... */ }
+    void getIP0() { /* ... */ }
+    string Feistel(string R, string K) { /* ... */ }
+    string getPTransform(string str) { /* ... */ }
+    string Feistel_SBOX(string str, int num) { /* ... */ }
+    string E_expend(string str) { /* ... */ }
+    string XORoperation(string a, string b) { /* ... */ }
+    string iterationT_A(int begin, int end) { /* ... */ }
+    string iterationT_D(int begin, int end) { /* ... */ }
+    string getIP1(string str) { /* ... */ }
+    string formatResult(string str) { /* ... */ }
+    string formatAndReduceResult(string str) { /* ... */ }
+    int Two2Ten(string num) { /* ... */ }
+    string formatKey() { /* ... */ }
+    string getPC1Key(string str) { /* ... */ }
+    void get_C_D(string str) { /* ... */ }
+    void getKeyI() { /* ... */ }
+    void LS_1(string& str) { /* ... */ }
+    void LS_2(string& str) { /* ... */ }
+    string getPC2Key(string str) { /* ... */ }
+    void getKeys() { /* ... */ }
+    int chekkey(string key) { /* ... */ }
+};
+докуменгтация на RSA(RSA.h)
+
+
+// Статические члены класса RSA, используемые для шифрования и дешифрования
+long RSA::e; // Открытая экспонента
+long RSA::n; // Модуль
+long RSA::d; // Секретная экспонента
+
+// Метод для шифрования сообщения
+string RSA::encrypt(string msg)
+{
+    // ...
+}
+
+// Метод для дешифрования сообщения
+string RSA::decrypt(string msg)
+{
+    // ...
+}
+
+// Метод для генерации ключей RSA
+int RSA::genereytkey(int p, int q)
+{
+    // ...
+}
+
+// Вспомогательные методы для реализации алгоритма RSA
+bool RSA::isPrime(long int prime) { /* ... */ }
+long int RSA::greatestCommonDivisor(long int e, long int t) { /* ... */ }
+long int RSA::calculateE(long int t) { /* ... */ }
+long int RSA::calculateD(long int e, long int t) { /* ... */ }
+long int RSA::encryptions(long int i, long int e, long int n) { /* ... */ }
+long int RSA::decryptions(long int i, long int d, long int n) { /* ... */ }
+
+
+// Статические члены класса RSA, используемые для шифрования и дешифрования
+long RSA::e; // Открытая экспонента
+long RSA::n; // Модуль
+long RSA::d; // Секретная экспонента
+
+// Метод для шифрования сообщения
+string RSA::encrypt(string msg)
+{
+    // ...
+}
+
+// Метод для дешифрования сообщения
+string RSA::decrypt(string msg)
+{
+    // ...
+}
+
+// Метод для генерации ключей RSA
+int RSA::genereytkey(int p, int q)
+{
+    // ...
+}
+
+// Вспомогательные методы для реализации алгоритма RSA
+bool RSA::isPrime(long int prime) { /* ... */ }
+long int RSA::greatestCommonDivisor(long int e, long int t) { /* ... */ }
+long int RSA::calculateE(long int t) { /* ... */ }
+long int RSA::calculateD(long int e, long int t) { /* ... */ }
+long int RSA::encryptions(long int i, long int e, long int n) { /* ... */ }
+long int RSA::decryptions(long int i, long int d, long int n) { /* ... */ }
+
+Этот код реализует алгоритм шифрования RSA. Он содержит методы для шифрования и дешифрования текста, а также для генерации ключей RSA. 
+Ключевые методы включают проверку на простоту числа, вычисление наибольшего общего делителя, открытой и секретной экспонент,
+а также функции шифрования и дешифрования.
+Алгоритм RSA использует два ключа — открытый и закрытый. Открытый ключ состоит из числа 
+n (произведение двух простых чисел p и q) и открытой экспоненты e. 
+Закрытый ключ состоит из того же числа n и секретной экспоненты d. 
+Шифрование и дешифрование выполняются с использованием модульных арифметических операций.
+
+
+//докуменгтация на шифр виженера(Vigenere.h)
+
+
+
+// Класс VigenereCipher с методами для установки ключа, шифрования и дешифрования
+class VigenereCipher {
+    string key; // Ключ шифрования
+
+    // Метод для установки ключа шифрования
+    void setkey(string key);
+
+    // Метод для шифрования текста
+    string encrypt(const string& text);
+
+    // Метод для дешифрования текста
+    string decrypt(const string& text);
+
+    // Вспомогательные методы
+    string getKey(const string& text, const string& key);
+    char cipherChar(char c, char key, bool encode);
+};
+Этот код реализует алгоритм шифрования Виженера. Он содержит методы для установки ключа, шифрования и дешифрования текста. Ключевые методы включают в себя получение эффективного ключа и шифрование/дешифрование каждого символа текста.
+
+Основные методы:
+
+setkey(string key): Преобразует ключ в верхний регистр и сохраняет его в члене класса key.
+encrypt(const string& text): Шифрует текст, используя эффективный ключ, полученный из метода getKey.
+decrypt(const string& text): Дешифрует текст, используя эффективный ключ, полученный из метода getKey.
+Вспомогательные методы:
+
+getKey(const string& text, const string& key): Генерирует эффективный ключ, повторяя исходный ключ до длины текста.
+cipherChar(char c, char key, bool encode): Шифрует или дешифрует отдельный символ, используя заданный ключ.

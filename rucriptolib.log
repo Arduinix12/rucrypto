@@ -1,0 +1,9 @@
+﻿  DES.cpp
+C:\Users\Администратор\Desktop\rucriptolib\DES.cpp(114,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Администратор\Desktop\rucriptolib\DES.cpp(190,15): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Администратор\Desktop\rucriptolib\DES.cpp(351,16): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Администратор\Desktop\rucriptolib\DES.cpp(466,15): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Администратор\Desktop\rucriptolib\DES.cpp(480,15): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\Администратор\Desktop\rucriptolib\DES.cpp(494,1): warning C4715: DES::chekstring: значение возвращается не при всех путях выполнения
+C:\Users\Администратор\Desktop\rucriptolib\DES.cpp(477,1): warning C4715: DES::chekkey: значение возвращается не при всех путях выполнения
+  rucriptolib.vcxproj -> C:\Users\Администратор\Desktop\rucriptolib\x64\Debug\rucriptolib.exe
