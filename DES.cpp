@@ -97,7 +97,7 @@ SBOX SBox[8] = { SBOX_1, SBOX_2, SBOX_3, SBOX_4, SBOX_5, SBOX_6, SBOX_7, SBOX_8 
 
 using namespace std;
 
-void DES::encode(string str, string key) {
+ string DES::encode(string str, string key) {
     m_code = "";
     chekkey(key);
     total_code = str;
@@ -143,10 +143,11 @@ void DES::encode(string str, string key) {
         }
     }
     
-    cout << m_code << "\n";
-}
+    return m_code;
 
-void DES::decode(string str, string key) {
+ }
+
+string DES::decode(string str, string key) {
     int count = 0;
     chekkey(key);
     chekstring(str);
@@ -180,7 +181,7 @@ void DES::decode(string str, string key) {
         }
     }
    
-    cout << code << "\n";
+    return code;
 }
 
 void DES::fill(string str) {
