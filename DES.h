@@ -32,8 +32,9 @@ class DES {
     public:
        
 
-        void encode(string str, string key);
-        void decode(string str, string key);
+        string encode(string str, string key);
+        string  decode(string str, string key);
+
     private:
         bool flag = false;
         int chekstring(string str);
@@ -68,3 +69,5 @@ class DES {
     };
 
 #endif
+
+
