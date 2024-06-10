@@ -1,5 +1,7 @@
 
 #include"DES.h"
+#ifndef TRUDES_H
+#define  TRUDES_H
 
 using namespace std;
 DES des;
@@ -21,3 +23,4 @@ private:
 
 
 };
+#endif
