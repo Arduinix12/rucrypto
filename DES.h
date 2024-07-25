@@ -5,6 +5,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include<fstream>
 
 #define DEBUG 0
 
@@ -31,7 +32,13 @@ class DES {
     
     public:
        
-
+        DES();
+        DES(string inputfile);
+        DES(string inputfile, string outputfile);
+        DES(string inputfile, string outputfile, string keyfile);
+        ~DES();
+        int read_Datafile(int cryptomode, string key);
+        int read_Datafile(int cryptomode);
         string encode(string str, string key);
         string  decode(string str, string key);
 
@@ -66,6 +73,19 @@ class DES {
         void LS_2(string& str);
         string getPC2Key(string str);
         void getKeys();
+
+        fstream finputfile;
+        fstream foutputfile;
+        fstream fkeyfile;
+        string	inputfile = "con";
+        string outputfile = "con";
+        string keyfile = "con";
+        string errorstr = "con";
+        string end = ".txt";
+        int mode;
+        int cryptomode;
+        bool deleteFile(string filePath);
+        int chekfile();
     };
 
 #endif
