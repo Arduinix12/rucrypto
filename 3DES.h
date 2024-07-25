@@ -8,6 +8,13 @@ DES des;
 class threDES {
 
 public:
+	threDES();
+	threDES(string inputfile);
+	threDES(string inputfile, string outputfile);
+	threDES(string inputfile, string outputfile, string keyfile);
+	~threDES();
+	int read_Datafile(int cryptomode, string k1,string k2, string k3);
+	int read_Datafile(int cryptomode);
 	string encrypt(string k1, string k2, string k3, string word);
 	string decrypt(string k1, string k2, string k3, string word);
 private:
@@ -20,6 +27,19 @@ private:
 	string decode_str = "";
 	string str;
 
+	fstream finputfile;
+	fstream foutputfile;
+	fstream fkeyfile;
+	string	inputfile = "con";
+	string outputfile = "con";
+	string keyfile = "con";
+	string errorstr = "con";
+	string end = ".txt";
+	int mode;
+	int cryptomode;
+	bool deleteFile(string filePath);
+	int chekfile();
+	int get_fkey(vector<char> buffer);
 
 
 };

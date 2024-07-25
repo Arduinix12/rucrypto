@@ -127,23 +127,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="3DES.cpp" />
+    <ClCompile Include="3DESftest.cpp" />
+    <ClCompile Include="Binari.cpp" />
     <ClCompile Include="caesar.cpp" />
     <ClCompile Include="DES.cpp" />
+    <ClCompile Include="fveginere.cpp" />
+    <ClCompile Include="otbash.cpp" />
     <ClCompile Include="RSA.cpp" />
+    <ClCompile Include="test3DES.cpp" />
+    <ClCompile Include="testBinari.cpp" />
     <ClCompile Include="testceasar.cpp" />
     <ClCompile Include="testDES.cpp" />
+    <ClCompile Include="testfceasar.cpp" />
+    <ClCompile Include="testotbash.cpp" />
     <ClCompile Include="testRSA.cpp" />
     <ClCompile Include="testvigenere.cpp" />
     <ClCompile Include="vigenere.cpp" />
+    <ClCompile Include="xor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3DES.h" />
+    <ClInclude Include="Binari.h" />
     <ClInclude Include="Caesar.h" />
     <ClInclude Include="DES.h" />
+    <ClInclude Include="otbash.h" />
     <ClInclude Include="RSA.h" />
     <ClInclude Include="Vigenere.h" />
+    <ClInclude Include="xor.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="doc.txt" />
+    <Text Include="test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

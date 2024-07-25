@@ -3,7 +3,7 @@
 
 using namespace std;
 
-
+/*
 int main() {
 
 	Otbash atbash;
@@ -18,3 +18,4 @@ int main() {
 	decryptedText = atbash.decryptOtbas(encryptedText);
 	cout << "Расшифрованный текст: " << decryptedText << endl;
 }
+*/

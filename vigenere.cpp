@@ -53,7 +53,7 @@ void VigenereCipher::setkey(string key) {
 
 string VigenereCipher::encrypt(const string& text) {
     string output;
-    //С€РёС„СЂРѕРІР°РЅРёРµ С‚РµРєСЃС‚Р°
+    //шифрование текста
     string effectiveKey = getKey(text, key);
     for (size_t i = 0; i < text.size(); i++) {
         output += cipherChar(text[i], effectiveKey[i], true);
@@ -63,7 +63,7 @@ string VigenereCipher::encrypt(const string& text) {
 
 string VigenereCipher::decrypt(const string& text) {
     string output;
-    //Р”РµС€РёС„СЂРѕРІР°РЅРёРµ С‚РµРєСЃС‚Р°
+    //Дешифрование текста
     string effectiveKey = getKey(text, key);
     for (size_t i = 0; i < text.size(); i++) {
         output += cipherChar(text[i], effectiveKey[i], false);
@@ -136,7 +136,7 @@ int VigenereCipher::read_Datafile(int cryptomode, string key)
         }
         break;
     case 3:
-        cerr << "РѕС€РёР±РєР° СЃР»РёС€РєРѕРј РјРЅРѕРіРѕ Р°СЂРіСѓРјРµРЅС‚РѕРІ РІ С„СѓРЅРєС†РёРё!\n";
+        cerr << "ошибка слишком много аргументов в функции!\n";
         break;
     }
 }
@@ -168,25 +168,25 @@ int VigenereCipher::read_Datafile(int cryptomode)
     else {
 
 
-        cerr << "РѕС€РёР±РєР° СЃР»РёС€РєРѕРј РјР°Р»Рѕ Р°СЂРіСѓРјРµРЅС‚РѕРІ РІ С„СѓРЅРєС†РёРё!\n";
+        cerr << "ошибка слишком мало аргументов в функции!\n";
         return 1;
     }
 
 }
 
 string VigenereCipher::getKey(const string& text, const string& key) {
-    //РџРѕР»СѓС‡Р°С‚СЊ РєР»СЋС‡
+    //Получать ключ
     string resultKey = key;
     while (resultKey.size() < text.size()) {
         resultKey += key;
     }
-    //РћР±СЂРµР·Р°РµРј РєР»СЋС‡
+    //Обрезаем ключ
     resultKey = resultKey.substr(0, text.size());
     return resultKey;
 }
 
 char VigenereCipher::cipherChar(char c, char key, bool encode) {
-    //РЁРёС„СЂРѕРІР°РЅРёРµ/Р”РµС€РёС„СЂРѕРІР°РЅРёРµ СЃРёРјРІРѕР»Р°
+    //Шифрование/Дешифрование символа
 
     if (!isalpha(c)) return c;
 
@@ -195,13 +195,13 @@ char VigenereCipher::cipherChar(char c, char key, bool encode) {
     int offset = key - keyBase;
 
     if (encode) {
-        //РЁРёС„СЂРѕРІР°РЅРёРµ СЃРёРјРІРѕР»Р°
+        //Шифрование символа
         return base + (c - base + offset) % 26;
     }
     else {
-        //Р”РµС€РёС„РІСЂРѕРІР°РЅРёРµ СЃРёРјРІРѕР»Р°
+        //Дешифврование символа
         return base + (26 + c - base + offset) % 26;
-        // С‚СѓС‚ РЅСѓР¶РЅРѕ РґРѕР±Р°РІРёС‚СЊ РїСЂРѕРІРµСЂРєСѓ РЅР° РґРёР°РїР°Р·РѕРЅ
+        // тут нужно добавить проверку на диапазон
     }
 }
 

@@ -1,5 +1,3 @@
-
-	
 #include "RSA.h"
 long RSA::e;
 long RSA::n;

@@ -1,0 +1,8 @@
+﻿3DESftest.obj : error LNK2005: "class DES des" (?des@@3VDES@@A) уже определен в 3DES.obj
+fveginere.obj : error LNK2005: main уже определен в 3DESftest.obj
+fveginere.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > input" (?input@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) уже определен в 3DESftest.obj
+fveginere.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > output" (?output@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) уже определен в 3DESftest.obj
+fveginere.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > key" (?key@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) уже определен в 3DESftest.obj
+testfceasar.obj : error LNK2005: main уже определен в 3DESftest.obj
+testvigenere.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > key" (?key@@3V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@A) уже определен в 3DESftest.obj
+C:\Users\Администратор\Desktop\rucrypto - все версии\rucrypto v2.0.0\x64\Debug\rucriptolib.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более
